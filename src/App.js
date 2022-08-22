@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Login  from './page/login';
 import Table from './page/table';
-// import { Routes, Route } from "react-router-dom";
+ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import { Container } from "@mui/system"
 
@@ -11,12 +11,15 @@ export default function App() {
 
 
   <Container component="main" >
-      <Table/>
+      {/* <Table/> */}
        <Login/>
-       </Container>
-      //  </Routes>
-       )
-      }
-{/* <Routes>
-(login&table)
-<Route path='/add' element={<Login/>}/> */}
+      
+     {/* <BrowserRouter>*/}
+ <Routes> 
+
+ <Route path='/add' element={<Login/>}/> 
+ <Route path='/Table' element={<Table/>}/>
+ </Routes>
+{/* </BrowserRouter> */}
+</Container>
+)}

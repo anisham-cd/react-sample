@@ -5,11 +5,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import axios from 'axios';
-//  import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
  const postURL = "http://localhost:3002/api/v1/login/add";
 
 
   function Login() {
+    let navigate = useNavigate();
   
 // const[filter,SetFilter]=React.useState(true)
 //  let navigate = useNavigate();
@@ -31,18 +32,9 @@ import axios from 'axios';
         let postData = response.data;
         console.log(" response data",response);
         console.log("postData",postData)
-      
-    //   postData == 200 ? navigate("./table") : navigate("./login");
       })
-      // let code=setCode.code;
-      // code == 200 ? navigate("./table") : navigate("./login");
-      // function search (rows){
-      //   return rows.fiter(
-      //        (rows)=>
-      //        rows.id().indexOf(q)>-1
-      //    );
-      // }
-      // console.log(search)
+        navigate("/Table");
+     
     };   
 
  return (
@@ -51,7 +43,7 @@ import axios from 'axios';
       <Typography component="h1" variant="h5" textAlign={'center'}>
        -- Login --
       </Typography>
-      <Box component="form" onSubmit={handleSubmit} >
+      <Box component="form" onSubmit={handleSubmit}>
 
         <TextField
           name="firstName"
